@@ -1,13 +1,10 @@
-def GetNumberFloat():
-    while type:
-        number_float = input()
-        try:
-            number_float = float(number_float)
-        except ValueError:
-            print('Неверный ввод числа!!!')
-        else:
-            break
-    return number_float
+def GetNumberFloat(input_string):
+    try:
+        number_float = float(input(input_string))
+        return number_float
+    except ValueError:
+        print('Неверный ввод числа!!!')
+        return GetNumberFloat(input_string)
 
 
 def GetPointLocation(x_coordinate, y_coordinate):
@@ -28,8 +25,5 @@ def GetPointLocation(x_coordinate, y_coordinate):
 
 
 print('Это программа, которая принимает на вход координаты точки (X и Y), и выдаёт номер четверти плоскости, в которой она находится, или на какой оси она находится.')
-print('Введите координату X: ')
-x = GetNumberFloat()
-print('Введите координату Y: ')
-y = GetNumberFloat()
-GetPointLocation(x, y)
+GetPointLocation(GetNumberFloat('Введите координату X: '),
+                 GetNumberFloat('Введите координату Y: '))

@@ -1,13 +1,10 @@
-def GetNumberInt():
-    while type:
-        number_int = input()
-        try:
-            number_int = int(number_int)
-        except ValueError:
-            print('Неверный ввод числа!!!')
-        else:
-            break
-    return number_int
+def GetNumberInt(input_string):
+    try:
+        number_int = int(input(input_string))
+        return number_int
+    except ValueError:
+        print('Неверный ввод числа!!!')
+        return GetNumberInt(input_string)
 
 
 def GetRangeValue(number):
@@ -24,5 +21,4 @@ def GetRangeValue(number):
 
 
 print('Это программа, которая по заданному номеру четверти, показывает диапазон возможных координат точек в этой четверти (x и y).')
-print('Введите номер координатной четверти: ')
-GetRangeValue(GetNumberInt())
+GetRangeValue(GetNumberInt('Введите номер координатной четверти: '))

@@ -1,13 +1,11 @@
-def GetNumberInt():
-    while type:
-        number_int = input()
-        try:
-            number_int = int(number_int)
-        except ValueError:
-            print('Неверный ввод числа!!!')
-        else:
-            break
-    return number_int
+def GetNumberInt(input_string):
+    try:
+        number_int = int(input(input_string))
+        return number_int
+    except ValueError:
+        print('Неверный ввод числа!!!')
+        return GetNumberInt(input_string)
+
 
 def GetHoliday(number):
     if number < 1 or number > 7:
@@ -17,6 +15,6 @@ def GetHoliday(number):
     else:
         print('Это рабочий день.')
 
+
 print('Это программа, которая принимает на вход цифру, обозначающую день недели, и проверяет, является ли этот день выходным.')
-print('Введите номер дня недели: ')
-GetHoliday(GetNumberInt())
+GetHoliday(GetNumberInt('Введите номер дня недели: '))
