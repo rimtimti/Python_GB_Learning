@@ -113,6 +113,7 @@ def text_compression(text: str) -> str:
     '''
     Сжимает текст по RLE-алгоритму
     '''
+    text += ' '
     compress, count = '', 1
     for i in range(len(text)-1):
         if i <= (len(text)+1):
@@ -128,6 +129,7 @@ def text_decompression(text: str) -> str:
     '''
     Восстанавливает текст из RLE-сжатия
     '''
+    text += ' '
     decompress, count = '', ''
     for i in range(len(text)-1):
         if i <= (len(text)+1):

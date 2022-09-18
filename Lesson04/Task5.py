@@ -6,16 +6,15 @@ print('Имеется файл: task5_start.txt, содержащий исход
 
 with open('task5_start.txt', 'r', encoding='utf-8') as file1, open('task5_compression.txt', 'w', encoding='utf-8') as file2:
     for line in file1.readlines():
-        file2.writelines(defs.text_compression(line)+'\n')
+        file2.writelines(defs.text_compression(line))
 print('Посмотри файл task5_compression.txt')
 with open('task5_compression.txt', 'r', encoding='utf-8') as file1, open('task5_decompression.txt', 'w', encoding='utf-8') as file2:
     for line in file1.readlines():
-        file2.writelines(defs.text_decompression(line)+'\n')
+        file2.writelines(defs.text_decompression(line))
 print('Посмотри файл task5_decompression.txt')
 
 
-# Проблема:      Если в исходном файле убрать пустую 4 строку, то 3-ю не сжимает, не могу понять почему
 
 # Проблема:      Пробовал реализовать функцию открытия 1 файла, изменений и записи в другой. Внизу в файле defs.py.
 #                Проблема в том, что в эту функцию нужно передавать 3-м аргументом РАЗНЫЕ другие функции.
-#                Сдаю так и дальше думаю....
+#                Сдаю так и дальше думаю.... Уже понял, как сделаю, отпишусь в личку
