@@ -96,7 +96,7 @@ def GetDiffBetweenMaxAndMinDecimalPart(array: list) -> float:
             min_decimal_part = array[i]%1
         if array[i]%1 > max_decimal_part:
             max_decimal_part = array[i]%1
-    return round((max_decimal_part - min_decimal_part), 10)
+    return round((max_decimal_part - min_decimal_part), 16)
 
 def GetFibonacci(number: int) -> List[int]:
     '''
