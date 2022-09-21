@@ -1,4 +1,3 @@
-from msilib.schema import File
 from random import randint
 from typing import List
 
@@ -68,6 +67,7 @@ def get_multipliers_number(number: int) -> List[int]:
     for i in range(1, number+1):
         if number % i == 0:
             array_multipliers.append(i)
+            number /= i
     return array_multipliers
 
 

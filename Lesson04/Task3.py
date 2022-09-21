@@ -7,7 +7,7 @@ n = defs.get_number_float('Введите N: ')
 with open('task3_start.txt', 'r', encoding='utf-8') as file1, open('task3_finish.txt', 'w', encoding='utf-8') as file2:
     lines = file1.readlines()
     for line in lines:
-        if float(line.strip().split()[2]) > n:
+        if float(line.split()[2]) > n:
             line = line.upper()
         file2.write(line)
 
