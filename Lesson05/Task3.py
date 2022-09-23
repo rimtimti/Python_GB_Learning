@@ -9,7 +9,7 @@ def get_cortages_upper(list1: list, list2: list)-> List:
     '''
     Возвращает по одинаковому индексу список кортежей 1 списка и 2 списка, написанного большими буквами
     '''
-    return [(list1[i-1], str(list2 [i-1]).upper()) for i in range (1, len(list1)+1)]
+    return [(list1[i], str(list2 [i]).upper()) for i in range (0, len(list1))]
 
 list3, list4 = [], []
 for i in range (0, len(list1)):
