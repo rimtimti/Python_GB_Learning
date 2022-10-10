@@ -1,8 +1,6 @@
 from config import TOKEN
 from datetime import datetime as dt
 
-# from telegram_bot_calendar import DetailedTelegramCalendar, LSTEP
-
 import logging
 from telegram import ReplyKeyboardMarkup, ReplyKeyboardRemove
 from telegram.ext import (Updater, CommandHandler, MessageHandler, Filters, ConversationHandler,)
@@ -59,7 +57,6 @@ def write_comment(update, _):
     comment = update.message.text
     logger.info("%s написал комментарий: %s.", user.first_name, update.message.text)
     update.message.reply_text('Теперь введи дату выполнения.')
-    
     return DATE
 
 def write_date(update, _):
